@@ -1,0 +1,218 @@
+[accessibility]
+ui_scale = 1.20
+
+[bar.default]
+position = "top"
+center = [ "media" ]
+concave_edge_corners = false
+end = [ "tray", "notifications", "network", "volume", "bluetooth", "clock", "workspaces", "session" ]
+margin_edge = 8
+margin_ends = 10
+radius = 0
+background_opacity = 0.0
+shadow = false
+scale = 1.10
+start = [ "launcher", "group:stats" ]
+thickness = 42
+reserve_space = true
+padding = 8
+widget_spacing = 10
+capsule = true
+capsule_fill = "surface"
+capsule_opacity = 0.88
+capsule_radius = 16
+capsule_padding = 8
+
+    [[bar.default.capsule_group]]
+    id = "stats"
+    members = [ "weather", "temp", "sysmon_2", "sysmon_3" ]
+    fill = "surface"
+    opacity = 0.88
+    padding = 8.0
+    radius = 16
+
+[dock]
+enabled = true
+position = "bottom"
+icon_size = 44
+radius = 12
+margin_edge = 8
+background_opacity = 0.55
+magnification = true
+magnification_scale = 1.45
+show_running = true
+show_dots = true
+reserve_space = true
+launcher_position = "none"
+pinned = [ "firefox", "kitty", "dolphin", "spotify-launcher", "steam" ]
+
+[shell]
+clipboard_image_action_command = "satty -f -"
+launch_apps_as_systemd_services = true
+polkit_agent = true
+settings_show_advanced = true
+panel_anchor_bar = "default"
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.panel]
+    launcher_placement = "floating"
+    launcher_position = "center"
+    clipboard_placement = "floating"
+    clipboard_position = "center"
+    control_center_placement = "floating"
+    control_center_position = "center"
+    wallpaper_placement = "floating"
+    wallpaper_position = "center"
+    session_placement = "floating"
+    session_position = "center"
+    open_near_click_control_center = false
+    open_near_click_launcher = false
+    open_near_click_clipboard = false
+    open_near_click_wallpaper = false
+    open_near_click_session = false
+
+    [shell.screenshot]
+    copy_to_clipboard = false
+    pipe_command = "satty -f -"
+    pipe_to_command = true
+    save_to_file = false
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[location]
+auto_locate = true
+
+[weather]
+enabled = true
+unit = "metric"
+
+[system.monitor]
+gpu_poll_seconds = 2
+
+[theme]
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt", "alacritty" ]
+
+[widget.clock]
+color = "secondary"
+format = "{:%a %b %d}\n{:%I:%M %p}"
+capsule = true
+
+[widget.launcher]
+color = "secondary"
+capsule = true
+capsule_radius = 20
+
+[widget.media]
+artist_first = true
+art_size = 22
+hide_when_no_media = false
+title_scroll = "always"
+min_length = 140
+max_length = 260
+capsule = false
+
+    [widget.media.actions]
+    left = "panel-toggle control-center media"
+    right = "media toggle"
+
+[widget.weather]
+show_condition = false
+show_temperature = true
+
+[widget.network]
+color = "secondary"
+
+[widget.notifications]
+color = "secondary"
+
+[widget.session]
+color = "error"
+
+[widget.spacer_1]
+type = "spacer"
+
+[widget.temp]
+type = "sysmon"
+stat = "cpu_usage"
+show_glyph = true
+show_value = true
+visualization = "none"
+
+[widget.sysmon_2]
+type = "sysmon"
+stat = "gpu_usage"
+glyph = "gpu-usage"
+show_glyph = true
+show_value = true
+visualization = "none"
+
+[widget.sysmon_3]
+type = "sysmon"
+stat = "ram_pct"
+show_glyph = true
+show_value = true
+visualization = "none"
+
+[widget.tray]
+capsule = true
+capsule_fill = "on_secondary"
+
+[widget.volume]
+color = "secondary"
+show_label = true
+capsule = true
+
+[widget.bluetooth]
+show_label = true
+hide_when_no_connected_device = true
+capsule = true
+
+[widget.workspaces]
+style = "regular"
+show_labels = true
+label_source = "id"
+active_pill_size = 2.5
+capsule = true
+capsule_fill = "on_primary"
+inactive_pill_size = 1.0
+pill_scale = 0.80
