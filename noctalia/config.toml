@@ -57,6 +57,7 @@ panel_anchor_bar = "default"
     auto_sync = true
 
     [shell.panel]
+    transparency_mode = "glass"
     launcher_placement = "floating"
     launcher_position = "center"
     clipboard_placement = "floating"
